@@ -1,0 +1,22 @@
+<app-box>
+  <div class="header">
+    <h3>Enter the sentence to be reversed</h3>
+  </div>
+
+  <mat-form-field class="input">
+    <input type="text" matInput placeholder="Enter your sentence" (keyup.enter)="submitSentence()"
+      [(ngModel)]="inputValue">
+    <button mat-button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+      <mat-icon>x</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="button-wrapper">
+    <button [disabled]="isDisabled" (click)="submitSentence()" mat-raised-button color="primary">Reverse</button>
+  </div>
+</app-box>
+
+<app-box class="result-box" *ngIf="(result$ | async) as result">
+  <h3>Result</h3>
+  <app-result-item [resultItem]="result"></app-result-item>
+</app-box>

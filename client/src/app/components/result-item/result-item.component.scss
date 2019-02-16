@@ -1,0 +1,18 @@
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+}
+
+.result-text {
+    max-width: calc(100% - 90px);
+}
+
+.result-timestamp {
+    font-size: 10px;
+    width: 75px;
+}
