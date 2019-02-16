@@ -12,8 +12,8 @@ exports.reverse_words = function (req, res) {
                 .reverse()
                 .join('');
         }).join(' ');
-        var timestamp = new Date.now();
+        var timestamp = Date.now();
 
-        res.json({ result, timestamp });
+        res.json({ result, original: sentence, timestamp });
     }
 };
