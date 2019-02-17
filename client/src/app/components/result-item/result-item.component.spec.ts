@@ -19,11 +19,6 @@ describe('ResultItemComponent', () => {
     fixture = TestBed.createComponent(ResultItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    component.resultItem = {
-      original: 'asd',
-      result: 'dsa',
-      timestamp: 123,
-    };
   });
 
   it('should create', () => {

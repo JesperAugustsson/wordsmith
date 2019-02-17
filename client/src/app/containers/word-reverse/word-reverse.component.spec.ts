@@ -63,21 +63,22 @@ describe('WordReverseComponent', () => {
 
       component.submitSentence();
       expect(reverseService.reverseSentence).not.toHaveBeenCalled();
-      expect(component.result$).toBeUndefined();
+      expect(component.result).toBeUndefined();
     });
 
     it('should call service and reset inputValue', () => {
-      const expected$ = of({
+      const expected = {
         original: 'Foo bar',
         result: 'ooF rab',
         timestamp: 123,
-      });
-      spyOn(reverseService, 'reverseSentence').and.returnValue(expected$);
+      };
+      spyOn(reverseService, 'reverseSentence').and.returnValue(of(expected));
       component.inputValue = 'Foo bar';
 
       component.submitSentence();
       expect(reverseService.reverseSentence).toHaveBeenCalledWith('Foo bar');
-      expect(component.result$).toEqual(expected$);
+      expect(component.result).toEqual(expected);
+      expect(component.history).toEqual([expected]);
       expect(component.inputValue).toBe('');
     });
   });

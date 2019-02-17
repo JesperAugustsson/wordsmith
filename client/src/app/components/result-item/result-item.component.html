@@ -1,4 +1,4 @@
-<div class="result" *ngIf="resultItem">
+<div class="result" *ngIf="resultItem" [@newItem]="animate">
   <div class="result-text">
     <p><strong>Original: </strong>{{resultItem.original}}</p>
     <p><strong>Reversed: </strong>{{resultItem.result}}</p>

@@ -16,7 +16,16 @@
   </div>
 </app-box>
 
-<app-box class="result-box" *ngIf="(result$ | async) as result">
-  <h3>Result</h3>
-  <app-result-item [resultItem]="result"></app-result-item>
-</app-box>
+<div class="result">
+  <app-box>
+    <h3>Result</h3>
+    <app-result-item [resultItem]="result"></app-result-item>
+  </app-box>
+</div>
+
+<div class="history">
+  <app-box>
+    <h3>History</h3>
+    <app-result-item animate="show" *ngFor="let historyItem of history" [resultItem]="historyItem"></app-result-item>
+  </app-box>
+</div>
