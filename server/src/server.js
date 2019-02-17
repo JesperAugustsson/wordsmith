@@ -12,7 +12,7 @@ app.use(cors());
 
 routes(app);
 
-var server = app.listen(port);
+let server = app.listen(port);
 server.timeout = 30000;
 
 app.use(function (req, res) {
@@ -20,3 +20,5 @@ app.use(function (req, res) {
 });
 
 console.log('RESTful API started on: ' + port);
+
+module.exports = server;
