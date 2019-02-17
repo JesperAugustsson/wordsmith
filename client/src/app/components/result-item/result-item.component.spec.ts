@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { ResultItemComponent } from './result-item.component';
 
@@ -8,7 +9,8 @@ describe('ResultItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ResultItemComponent]
+      declarations: [ResultItemComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
   }));
@@ -17,6 +19,11 @@ describe('ResultItemComponent', () => {
     fixture = TestBed.createComponent(ResultItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    component.resultItem = {
+      original: 'asd',
+      result: 'dsa',
+      timestamp: 123,
+    };
   });
 
   it('should create', () => {

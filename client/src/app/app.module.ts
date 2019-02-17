@@ -18,14 +18,14 @@ import { services } from './services';
 @NgModule({
   declarations: [
     AppComponent,
-    containers,
-    components,
+    ...components,
+    ...containers,
   ],
   imports: [
-    FormsModule,
-    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,

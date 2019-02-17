@@ -10,7 +10,7 @@ import { ReverseResponse } from '../../models';
   styleUrls: ['./word-reverse.component.scss']
 })
 export class WordReverseComponent {
-  public inputValue: string = '';
+  public inputValue = '';
   public result$: Observable<ReverseResponse>;
 
   constructor(private readonly reverseService: ReverseService) { }
